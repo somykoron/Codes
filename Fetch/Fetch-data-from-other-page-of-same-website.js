@@ -8,6 +8,9 @@
 function adding_min_cart(data){
     var newDom = document.createElement('div');
     newDom.innerHTML = data;
+
+    var parsenode = newDom.querySelector("section.fDay");
+    document.querySelector("body").insertAdjacentElement("beforeend",parsenode);
 }
 
 function fetch_data() {
@@ -18,6 +21,8 @@ function fetch_data() {
             adding_min_cart(this.responseText);
         }
     });
-    xhr.open("GET", "https://global.happyselfjournal.com/cart");
+    xhr.open("GET", "https://august.com/products/august-smart-lock-connect");
     xhr.send();
 }
+
+fetch_data();
